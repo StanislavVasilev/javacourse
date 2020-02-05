@@ -2,7 +2,7 @@
  * @author Stanislav
  * @see Base
  * @see #main(String[])
- *
+ *git
  */
 public class Base {
   /**
