@@ -1,7 +1,10 @@
 package calculator.application;
 
 import calculator.Calc;
-import calculator.operations.*;
+import calculator.operations.Addition;
+import calculator.operations.Division;
+import calculator.operations.Multiplication;
+import calculator.operations.Subtraction;
 
 import java.util.Scanner;
 
