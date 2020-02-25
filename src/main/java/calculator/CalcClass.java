@@ -1,19 +1,8 @@
 package calculator;
 
-import sun.usagetracker.UsageTrackerClient;
-
 import java.util.Scanner;
 
-/**
- * @author Stanislav
- * Задание 1 и 2.
- * 1. Начинаем писать калькулятор:
- * Реализовать сложение дробных чисел, которые пользователь вводит в консоль. Использовать комментарии и JavaDoc при описании метода. Использовать форматирование при выводе результата в консоль. Полученный результат округлять до 4-х знаков после запятой.
- * 2. Запушить проект в свой репозиторий на GitHub
- * *Добавить возможность выбора другой операции (сложение, вычитание, деление, умножение)
- *
- */
-public class MainClass {
+public class CalcClass {
   public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
     double num1 = getNum(in, "Type the first num");
