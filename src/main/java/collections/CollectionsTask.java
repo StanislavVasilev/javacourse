@@ -16,6 +16,7 @@ import java.util.TreeMap;
  * Посчитать сколько раз каждое слово встречается в файле.
  * Вывести статистику на консоль
  * Найти слово с максимальным количеством повторений. Вывести на консоль это слово и сколько раз оно встречается в файле
+ * Файл расположен по адресу src\main\resources\Example.txt
  */
 public class CollectionsTask {
   public static void main(String[] args) throws FileNotFoundException {
