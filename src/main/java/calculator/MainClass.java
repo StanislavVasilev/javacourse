@@ -1,11 +1,8 @@
 package calculator;
 
-import calculator.application.ApplicationClass;
-
 import java.util.Scanner;
 
-import static java.lang.System.in;
-import static java.lang.System.out;
+import static java.lang.System.*;
 
 /**
  * @author Stanislav
@@ -15,11 +12,16 @@ import static java.lang.System.out;
 public class MainClass {
   public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
-    ApplicationClass appClass = new ApplicationClass();
     Calc calc = new Calc();
-    calc.setNum(in);
-    calc.setNum2(in);
-    out.printf("Result is: %.2f\n", appClass.getOperationAndPrintResult(in, calc));
+    try {
+      calc.setNum(in);
+      calc.setNum2(in);
+      out.printf("Result is: %.2f\n", calc.getOperationAndPrintResult(in, calc));
+    } catch (NumberFormatException | IllegalStateException | ArithmeticException e) {
+      out.println("Операция не может быть выполнена");
+      e.printStackTrace();
+      in.close();
+    }
     in.close();
   }
 }
