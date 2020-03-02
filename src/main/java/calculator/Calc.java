@@ -1,9 +1,6 @@
 package calculator;
 
-import calculator.operations.Addition;
-import calculator.operations.Division;
-import calculator.operations.Multiplication;
-import calculator.operations.Subtraction;
+import calculator.operations.*;
 
 import java.util.Scanner;
 
@@ -11,17 +8,19 @@ public class Calc {
   private double num;
   private double num2;
 
-  public Calc(){};
+  public Calc() {
+  }
+
   public Calc(double num, double num2) {
     this.num = num;
-    this.num = num2;
+    this.num2 = num2;
   }
 
   public void setNum(Scanner in) {
     System.out.println("Type the first num");
     String text = in.next();
-      if (text.contains(",")) {
-        text = text.replace(",", ".");
+    if (text.contains(",")) {
+      text = text.replace(",", ".");
     }
     this.num = Double.parseDouble(text);
   }
@@ -38,36 +37,38 @@ public class Calc {
   /**
    * @return возвращает значение первого числа
    */
-  public double getFirstNum(){
-  return num;
+  public double getFirstNum() {
+    return num;
   }
 
-  public double getSecondNum(){
+  public double getSecondNum() {
     return num2;
   }
-  private Addition add(){
+
+  private Addition add() {
     return new Addition();
   }
-  private Subtraction sub(){
+
+  private Subtraction sub() {
     return new Subtraction();
   }
-  private Division div(){
+
+  private Division div() {
     return new Division();
   }
-  private Multiplication mult(){
+
+  private Multiplication mult() {
     return new Multiplication();
   }
 
-  private char getOperationType(Scanner in) {
-    System.out.println("Type the operation type");
-    String text = in.next();
+  public char getOperationType(String text) {
     char[] arr = text.toCharArray();
     return arr[0];
   }
 
-  public double getOperationAndPrintResult(Scanner in, Calc calc) throws ArithmeticException{
+  public double getOperationAndPrintResult(String text, Calc calc) {
     double result = 0;
-    switch (getOperationType(in)) {
+    switch (getOperationType(text)) {
       case '+':
         result = add().getOperation(calc);
         return result;
@@ -81,9 +82,7 @@ public class Calc {
         result = div().getOperation(calc);
         return result;
       default:
-        System.out.println("You chosen incorrect operation, try again");
-        result = Double.NaN;
+        throw new IllegalArgumentException("You chosen incorrect operation, try again");
     }
-    return result;
   }
 }

@@ -10,8 +10,7 @@ public class Division implements Operations {
 
   public double getOperation(Calc calc) throws ArithmeticException {
     if (calc.getSecondNum() == 0) {
-      System.out.println("Делить на 0 нельзя");
-      throw new ArithmeticException();
+      throw new ArithmeticException("Делить на 0 нельзя");
     }
     return calc.getFirstNum() / calc.getSecondNum();
   }

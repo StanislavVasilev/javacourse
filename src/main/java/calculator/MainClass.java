@@ -6,22 +6,22 @@ import static java.lang.System.*;
 
 /**
  * @author Stanislav
- * Добавить обработку исключений в задание с ООП калькуляторам
- * (например, исключение может возникнуть при делении на ноль)
+ * Задание №8
+ * Покрыть Unit тестами последний проект с калькулятором
  */
 public class MainClass {
   public static void main(String[] args) {
-    Scanner in = new Scanner(System.in);
+    Scanner scanner = new Scanner(in);
     Calc calc = new Calc();
     try {
-      calc.setNum(in);
-      calc.setNum2(in);
-      out.printf("Result is: %.2f\n", calc.getOperationAndPrintResult(in, calc));
-    } catch (NumberFormatException | IllegalStateException | ArithmeticException e) {
-      out.println("Операция не может быть выполнена");
-      e.printStackTrace();
-      in.close();
+      calc.setNum(scanner);
+      calc.setNum2(scanner);
+      out.println("Type the operation type");
+      out.printf("Result is: %.2f\n", calc.getOperationAndPrintResult(scanner.next(), calc));
+    } catch (IllegalStateException | ArithmeticException | IllegalArgumentException e) {
+      out.println(e.getMessage());
+      scanner.close();
     }
-    in.close();
+    scanner.close();
   }
 }
