@@ -1,4 +1,4 @@
-package calculator;
+package calculator.application;
 
 import sun.usagetracker.UsageTrackerClient;
 
