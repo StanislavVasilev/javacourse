@@ -33,11 +33,8 @@ public class OperationsTests {
   public void checkDivisionByZeroOperationResultTest() throws ArithmeticException {
     Calc calc = new Calc(6, 0);
     Division division = new Division();
-    try {
-      division.getOperation(calc);
-    } catch (ArithmeticException e) {
-      assertEquals(e.getMessage(), "Делить на 0 нельзя");
-    }
+    division.getOperation(calc);
+
   }
 
   @Test()
