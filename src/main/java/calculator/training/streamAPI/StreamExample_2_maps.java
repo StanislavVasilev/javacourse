@@ -48,6 +48,6 @@ public class StreamExample_2_maps {
 то возвращается значение по умолчанию "not found", указанное в параметрах метода
 */
     map.getOrDefault(55, "not found");
-    
+
   }
 }
